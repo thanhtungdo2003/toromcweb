@@ -5,7 +5,7 @@ export const sendVerifyEmail = async (email) => {
   try {
     const response = await axios.post(`/email/send-verify-mail/${email}`);
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     console.log(err);
     throw Error(err)
   }
@@ -18,7 +18,7 @@ export const sendOTPEmail = async (current_password) => {
       }
     });
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     throw err?.response?.data?.detail
   }
 }
@@ -30,7 +30,7 @@ export const sendOTPVerify = async (otp, newPassword) => {
       }
     });
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     throw err?.response?.data?.detail
   }
 }
@@ -38,7 +38,7 @@ export const verifyEmail = async (token) => {
   try {
     const response = await axios.post(`/email/verify-mail/${token}`);
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     console.log(err);
     throw Error(err)
   }
@@ -52,7 +52,7 @@ export const createOrder = async (method, pack) => {
       }
     });
     return res.data;
-  } catch (err) {
+  } catch (err: any) {
     return err
   }
 }
@@ -65,7 +65,7 @@ export const update = async (data) => {
       }
     });
     return res.data;
-  } catch (err) {
+  } catch (err: any) {
     return err
   }
 }
@@ -73,7 +73,7 @@ export const login = async (email, password) => {
   try {
     const res = await axios.post(`/user/login`, { email: email, password: password });
     return res.data;
-  } catch (err) {
+  } catch (err: any) {
     return err
   }
 }
@@ -82,7 +82,7 @@ export const getByEmail = async (email) => {
   try {
     const res = await axios.get(`/user/get-by-email/${email}`);
     return res.data;
-  } catch (err) {
+  } catch (err: any) {
     return err
   }
 }

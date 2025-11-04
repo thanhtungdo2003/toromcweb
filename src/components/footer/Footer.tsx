@@ -1,13 +1,10 @@
 import React from "react";
-import { Row, Col, Input, Button, Divider } from "antd";
+import { Row, Col, Divider } from "antd";
 import { 
     FacebookOutlined, 
     YoutubeOutlined, 
-    DiscordOutlined,
     CrownFilled,
-    PhoneFilled,
     MailFilled,
-    EnvironmentFilled,
     PlayCircleFilled,
     DiscordFilled,
     CopyFilled,

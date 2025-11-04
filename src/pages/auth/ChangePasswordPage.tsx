@@ -31,7 +31,7 @@ const ChangePasswordPage: React.FC = () => {
     const [searchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
-    const { verifyData, clearVerifyData, changePassword } = useAuthStore();
+    const { verifyData, changePassword } = useAuthStore();
 
     // Lấy email từ URL params (nếu có)
     const email = searchParams.get("email");
@@ -90,7 +90,6 @@ const ChangePasswordPage: React.FC = () => {
         const hasUpperCase = /[A-Z]/.test(value);
         const hasLowerCase = /[a-z]/.test(value);
         const hasNumbers = /\d/.test(value);
-        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
 
         if (!hasUpperCase || !hasLowerCase || !hasNumbers) {
             return Promise.reject(

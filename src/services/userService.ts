@@ -1,4 +1,4 @@
-import { UserProfile, UserProfiles } from "../types/profile";
+import { UserProfiles } from "../types/profile";
 import apiClient from "../utils/apiClient";
 
 export const getUserProfiles = async (filters: {

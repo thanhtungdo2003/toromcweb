@@ -15,34 +15,34 @@ import ChangePasswordPage from "../pages/auth/ChangePasswordPage";
 import React from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { Spin } from "antd";
-import Error403 from "../components/error/403";
+// import Error403 from "../components/error/403";
 
-const ProtectedRoute: React.FC<{
-    children: React.ReactNode;
-    requireAuth?: boolean;
-}> = ({ children, requireAuth = true }) => {
-    const { token, isLoading } = useAuthStore();
-    const location = useLocation();
+// const ProtectedRoute: React.FC<{
+//     children: React.ReactNode;
+//     requireAuth?: boolean;
+// }> = ({ children, requireAuth = true }) => {
+//     const { token, isLoading } = useAuthStore();
+//     const location = useLocation();
 
-    if (isLoading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <Spin size="large" tip="Đang xác thực..." />
-            </div>
-        );
-    }
+//     if (isLoading) {
+//         return (
+//             <div className="min-h-screen flex items-center justify-center">
+//                 <Spin size="large" tip="Đang xác thực..." />
+//             </div>
+//         );
+//     }
 
-    if (requireAuth && !token) {
-        return <Navigate to="/auth/login" state={{ from: location }} replace />;
-    }
+//     if (requireAuth && !token) {
+//         return <Navigate to="/auth/login" state={{ from: location }} replace />;
+//     }
 
-    return <>{children}</>;
-};
+//     return <>{children}</>;
+// };
 
 const AdminProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
-    const { user, token, isLoading } = useAuthStore();
+    const { token, isLoading } = useAuthStore();
     const location = useLocation();
 
     if (isLoading) {

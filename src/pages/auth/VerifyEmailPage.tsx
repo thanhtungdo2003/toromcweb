@@ -5,7 +5,6 @@ import { Card, Button, Spin, Alert, Typography, Space } from "antd";
 import {
     CheckCircleFilled,
     CloseCircleFilled,
-    MailOutlined,
     ArrowLeftOutlined,
     ReloadOutlined,
 } from "@ant-design/icons";

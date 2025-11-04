@@ -1,6 +1,5 @@
 // hooks/useCoinSystem.ts
-import { useState, useEffect } from 'react';
-import { message } from 'antd';
+import { useState } from 'react';
 
 interface CoinSystem {
   userCoins: number;

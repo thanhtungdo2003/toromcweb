@@ -1,30 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Input, Badge, Menu, Dropdown } from "antd";
-import type { MenuProps } from "antd";
 import {
     UserOutlined,
-    ShoppingCartOutlined,
-    HeartOutlined,
-    DownOutlined,
     GiftOutlined,
     SettingOutlined,
     LogoutOutlined,
-    FireFilled,
-    CrownFilled,
-    TeamOutlined,
 } from "@ant-design/icons";
-import ArrowDownIcon from "../../icons/ArrowDownIcon";
 import { useNavigate } from "react-router-dom";
 import { useCoinSystem } from "../../hooks/useCoinSystem";
 import { useAuthStore } from "../../store/useAuthStore";
-import { getCart } from "../../services/cartService";
 import { UserProfile } from "../../types/profile";
 import { getInfo } from "../../services/authService";
 import SearchBox from "../search/SearchBox";
-import { Category } from "../../types/category";
-import { Brand } from "../../types/brand";
-import { getBrands } from "../../services/brandService";
-import { getCategories } from "../../services/categoryService";
 import "./style.css";
 const Header: React.FC = () => {
     const navigate = useNavigate();
@@ -32,15 +19,11 @@ const Header: React.FC = () => {
     const [userInfo, setUserInfo] = useState<UserProfile>()
     const { coinSystem, setCoinSystem } = useCoinSystem();
     const [forcusSearchBar, setForcusSearchBar] = useState(false)
-    const [categories, setCategories] = useState<Category[]>();
-    const [brands, setBrands] = useState<Brand[]>();
 
     useEffect(() => {
         getInfo().then(res => {
             setUserInfo(res)
         }).catch();
-        getBrands({ page: 1, row: 10 }).then(res => setBrands(res.data)).catch(() => { })
-        getCategories({ page: 1, row: 10 }).then(res => setCategories(res.data)).catch(() => { })
     }, [])
 
     const userMenu = (
@@ -67,68 +50,6 @@ const Header: React.FC = () => {
         />
     );
 
-    const menuItems: MenuProps["items"] = [
-        {
-            key: "home",
-            label: "Trang Chủ",
-            onClick: () => { navigate("/") },
-            className: "menu-item-gaming"
-        },
-        {
-            key: "servers",
-            label: (
-                <span className="inline-flex items-center gap-1 menu-item-gaming">
-                    Máy Chủ <FireFilled style={{ fontSize: 12 }} />
-                </span>
-            ),
-            children: categories?.map((e) => {
-                return ({
-                    key: `server:${e.id}`,
-                    label: e.name,
-                    onClick: () => navigate(`/products?category_id=${e.id}`),
-                    className: "submenu-item"
-                })
-            }),
-        },
-        {
-            key: "types",
-            label: (
-                <span className="inline-flex items-center gap-1 menu-item-gaming">
-                    Loại Server <CrownFilled style={{ fontSize: 12 }} />
-                </span>
-            ),
-            children: brands?.map((e) => {
-                return ({
-                    key: `type:${e.id}`,
-                    label: e.name,
-                    onClick: () => navigate(`/products?brand_id=${e.id}`),
-                    className: "submenu-item"
-                })
-            }),
-        },
-        {
-            key: "community",
-            label: (
-                <span className="inline-flex items-center gap-1 menu-item-gaming">
-                    Cộng Đồng <TeamOutlined style={{ fontSize: 12 }} />
-                </span>
-            ),
-            children: [
-                { key: "community:events", label: "Sự Kiện" },
-                { key: "community:guides", label: "Hướng Dẫn" },
-                { key: "community:forum", label: "Diễn Đàn" },
-            ],
-        },
-        {
-            key: "premium",
-            label: (
-                <span className="premium-badge">
-                    Premium
-                </span>
-            ),
-            className: "premium-menu-item"
-        },
-    ];
 
     const handleCoinClick = () => {
         setCoinSystem((prev) => ({
@@ -244,11 +165,8 @@ const Header: React.FC = () => {
                         )}
 
                         {/* Cart */}
-                        <Badge count={getCart().length} size="small" className="minecraft-badge">
+                        <Badge count={0} size="small" className="minecraft-badge">
                             <div className="action-icon cart-icon">
-                                <ShoppingCartOutlined
-                                    onClick={() => navigate("/shop-cart")}
-                                />
                             </div>
                         </Badge>
                     </div>

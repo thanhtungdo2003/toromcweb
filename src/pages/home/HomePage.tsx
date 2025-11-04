@@ -1,9 +1,9 @@
 import { Carousel as AntCarousel, Button, Row, Col, Card, Statistic } from "antd";
 import { useNavigate } from "react-router-dom";
 import { Toaster } from "sonner";
-import { CrownFilled, FireFilled, TeamOutlined, RocketFilled, SafetyCertificateFilled, DiscordFilled, PlayCircleFilled, CalendarFilled, PlayCircleTwoTone, BuildOutlined, StarOutlined, HeartOutlined, CopyFilled } from "@ant-design/icons";
+import { CrownFilled, FireFilled, TeamOutlined, RocketFilled, SafetyCertificateFilled, DiscordFilled, PlayCircleFilled, CalendarFilled, BuildOutlined, StarOutlined, HeartOutlined, CopyFilled } from "@ant-design/icons";
 import "./style.css";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const HomePage = () => {
     const navigate = useNavigate();

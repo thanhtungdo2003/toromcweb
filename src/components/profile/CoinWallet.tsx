@@ -1,8 +1,7 @@
 // components/profile/CoinWallet.tsx
 import React from 'react';
-import { Card, List, Tag, Statistic, Button } from 'antd';
+import { Card, List, Statistic, Button } from 'antd';
 import { GiftOutlined, HistoryOutlined } from '@ant-design/icons';
-import { CoinHistory, DailyRewardHistory } from '../../types/profile';
 import { useNavigate } from 'react-router-dom';
 
 interface CoinWalletProps {

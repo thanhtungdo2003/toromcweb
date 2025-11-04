@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Input, Button, Card, Tabs, message, Divider, Space } from "antd";
 import {
     UserOutlined,
@@ -14,7 +14,6 @@ import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
     const [loading, setLoading] = useState(false);
-    const [form] = Form.useForm();
     const navigate = useNavigate();
 
     const [loginFrm] = Form.useForm();

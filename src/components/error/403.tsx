@@ -48,7 +48,7 @@ const Error403: React.FC = () => {
                 viewBox="0 0 260 118.9"
                 role="img"
             >
-                <title xmlLang="en">403 Error</title>
+                <title>403 Error</title>
                 <defs>
                     <clipPath id="white-clip">
                         <circle

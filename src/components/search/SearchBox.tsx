@@ -1,24 +1,17 @@
 import "./style.css";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import apiClient from "../../utils/apiClient";
-import { BoxPlotOutlined, PlusCircleFilled, SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
 import { Button, Input, Tag } from "antd";
-import { getProducts, searchProduct } from "../../services/productService";
-import { getBrands } from "../../services/brandService";
-import { Product } from "../../types/product";
-import { Brand } from "../../types/brand";
 
 
 interface SearchBoxProps {
     onClose: () => void;
 }
-const formatCurrency = (value: number): string =>
-    new Intl.NumberFormat(undefined, { style: 'currency', currency: 'VND' }).format(value);
+// const formatCurrency = (value: number): string =>
+//     new Intl.NumberFormat(undefined, { style: 'currency', currency: 'VND' }).format(value);
 // ==== Component ====
 export default function SearchBox({ onClose }: SearchBoxProps) {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [brands, setBrands] = useState<Brand[]>([]);
     const [searchKeyword, setSearchKeyword] = useState<string>("");
     const [debouncedValue, setDebouncedValue] = useState<string>(searchKeyword);
     const [loading, setLoading] = useState<boolean>(false);
@@ -53,13 +46,11 @@ export default function SearchBox({ onClose }: SearchBoxProps) {
 
         const fetchData = async () => {
             try {
-                const [products, brands] = await Promise.all([
-                    getProducts({ searchKeyword: debouncedValue }),
-                    getBrands({ searchKeyword: debouncedValue })
-                ]);
+                // const [products, brands] = await Promise.all([
+                //     getProducts({ searchKeyword: debouncedValue }),
+                // ]);
 
-                setProducts(products?.data);
-                setBrands(brands?.data);
+                // setProducts(products?.data);
             } catch (err: any) {
                 toast.error(err?.status || "Error fetching data");
             } finally {
@@ -71,23 +62,23 @@ export default function SearchBox({ onClose }: SearchBoxProps) {
     }, [debouncedValue]);
 
     // add to history
-    const addHistory = () => {
-        if (!searchKeyword.trim()) return;
+    // const addHistory = () => {
+    //     if (!searchKeyword.trim()) return;
 
-        try {
-            const historys: string[] = JSON.parse(localStorage.getItem("search_historys") || "[]");
-            if (!historys.includes(searchKeyword)) {
-                const newHistorys =
-                    historys.length >= 15
-                        ? [searchKeyword, ...historys.slice(0, 14)]
-                        : [searchKeyword, ...historys];
-                localStorage.setItem("search_historys", JSON.stringify(newHistorys));
-                setSearchHistory(newHistorys);
-            }
-        } catch {
-            localStorage.removeItem("search_historys");
-        }
-    };
+    //     try {
+    //         const historys: string[] = JSON.parse(localStorage.getItem("search_historys") || "[]");
+    //         if (!historys.includes(searchKeyword)) {
+    //             const newHistorys =
+    //                 historys.length >= 15
+    //                     ? [searchKeyword, ...historys.slice(0, 14)]
+    //                     : [searchKeyword, ...historys];
+    //             localStorage.setItem("search_historys", JSON.stringify(newHistorys));
+    //             setSearchHistory(newHistorys);
+    //         }
+    //     } catch {
+    //         localStorage.removeItem("search_historys");
+    //     }
+    // };
 
     // ==== Render ====
     return (
@@ -155,32 +146,18 @@ export default function SearchBox({ onClose }: SearchBoxProps) {
                             </div>
                         )}
 
-                        {!loading && products.length === 0 && brands.length === 0 && (
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    fontSize: "14px",
-                                    padding: "40px",
-                                }}
-                            >
-                                <div>...</div>
-                                No results found for "{searchKeyword}"
-                            </div>
-                        )}
+
 
                         {!loading && (
                             <>
-                                {products?.map((e) => {
+                                {/* {products?.map((e) => {
                                     const thumbnail = e.images?.find(p => p.is_thumbnail);
                                     const variants = e.variants || [];
                                     let index = 0;
                                     let min = Infinity;
                                     variants.forEach((v, i) => {
-                                        if (v.price < min) {
-                                            min = v.price;
+                                        if (v.price || 0 < min) {
+                                            min = v.price || 0;
                                             index = i;
                                         }
                                     });
@@ -217,30 +194,9 @@ export default function SearchBox({ onClose }: SearchBoxProps) {
                                             </div>
                                         </a>
                                     )
-                                })}
+                                })} */}
 
-                                {brands?.map((e) => (
-                                    <a
-                                        key={`dest-${e.id}`}
-                                        onClick={addHistory}
-                                        href={`/brand/${e.id}`}
-                                        style={{ textDecoration: "none" }}
-                                    >
-                                        <div className="result-item">
-                                            <img src={e.logo_url} />
-                                            <div className="result-item-content">
-                                                <div className="result-item-main">
-                                                    <div className="___title">
-                                                        <strong style={{ fontSize: "16px" }}>{e.name}</strong>
-                                                    </div>
-                                                </div>
-                                                <div className="result-item-footer">
-                                                    <div style={{ fontSize: "12px" }}>Brand</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                ))}
+
                             </>
                         )}
                     </div>
