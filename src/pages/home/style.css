@@ -1,7 +1,7 @@
 /* Minecraft Theme Styles - TOROMC.VN */
 .minecraft-hero {
     position: relative;
-    height: 70vh;
+    height: 85vh;
     min-height: 500px;
     overflow: hidden;
 }
@@ -23,7 +23,7 @@
 
 .hero-slide {
     position: relative;
-    height: 70vh;
+    height: 85vh;
     min-height: 500px;
 }
 

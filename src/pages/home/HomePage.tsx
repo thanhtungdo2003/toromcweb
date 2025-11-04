@@ -124,9 +124,9 @@ const HomePage = () => {
                                 {item.type === "discord" && (
                                     <div className="discord-widget">
                                         <iframe
-                                            src="https://discord.com/widget?id=1432600202522656831&theme=dark"
+                                            src="https://e.widgetbot.io/channels/1432600202522656831/1433228151202381916?api=12ff209e-1903-410c-8879-8fbd458b21fe"
                                             width="550"
-                                            height="400"
+                                            height="500"
                                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                                             className="discord-iframe"
                                         ></iframe>
