@@ -1,0 +1,81 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+ul {
+  margin-bottom: 0;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap'); */
+
+
+
+body {
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  background-color: black;
+  --s: 780px;
+  /* control the size */
+  --c1: #0e0e0e;
+  --c2: #141414;
+  --c3: #000000;
+
+  background: repeating-conic-gradient(from 30deg,
+      #0000 0 120deg,
+      var(--c3) 0 180deg) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg);
+  background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+
+
+
+.ant-menu-horizontal>.ant-menu-item::after,
+.ant-menu-horizontal>.ant-menu-submenu::after {
+  border-bottom: none !important;
+}
+
+.ant-menu-horizontal>.ant-menu-item:hover::after,
+.ant-menu-horizontal>.ant-menu-submenu:hover::after {
+  border-bottom: none !important;
+}
+
+/* Tighter menu line-height */
+.main-nav.ant-menu-horizontal {
+  line-height: 26px;
+  /* default ~46px */
+  min-height: 26px;
+}
+
+.main-nav.ant-menu-horizontal>.ant-menu-item,
+.main-nav.ant-menu-horizontal>.ant-menu-submenu {
+  line-height: 26px;
+  height: 26px;
+}
+
+.main-nav.ant-menu-horizontal>.ant-menu-item .ant-menu-title-content,
+.main-nav.ant-menu-horizontal>.ant-menu-submenu .ant-menu-title-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Thêm vào file CSS */
+.daily-coin-popup .ant-modal-content {
+  border-radius: 12px;
+}
+
+.daily-coin-popup .ant-modal-body {
+  padding: 0;
+}
+
+.filters-box {
+  position: sticky;
+  top: 10px;
+}

@@ -1,0 +1,277 @@
+/* Minecraft Footer Styles - TOROMC.VN */
+.minecraft-footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #c0c0c0;
+    border-top: 3px solid #ffd700;
+}
+
+.footer-main {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(40, 40, 40, 0.95) 100%);
+}
+
+.footer-section {
+    height: 100%;
+}
+
+.minecraft-logo-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ffd700, #ffaa00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+}
+
+.footer-section .logo-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffd700, #ffaa00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+    line-height: 1;
+}
+
+.footer-section .logo-subtitle {
+    font-size: 0.7rem;
+    color: #c0c0c0;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+}
+
+.footer-description {
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Server IP Section */
+.server-ip-section {
+    margin-top: 1.5rem;
+}
+
+.ip-label {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.ip-address {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ip-address:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.ip-icon {
+    font-size: 1.1rem;
+}
+
+.copy-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-left: auto;
+}
+
+/* Footer Titles & Links */
+.footer-title {
+    color: #ffd700;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background: linear-gradient(45deg, #ffd700, #ffaa00);
+    border-radius: 2px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-link {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #ffd700;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.footer-divider {
+    border-color: rgba(255, 215, 0, 0.3);
+    margin: 1rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #ffd700;
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.contact-item a {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ffd700;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: linear-gradient(135deg, #151515 0%, #1a1a1a 100%);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.copyright {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c0c0c0;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.social-link:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Server Features */
+.server-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-tag {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    color: #ffd700;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-main .px-\[10\%\] {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .footer-bottom .px-\[10\%\] {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .footer-title {
+        font-size: 1rem;
+    }
+    
+    .social-links {
+        gap: 0.5rem;
+    }
+    
+    .social-link {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .server-features {
+        gap: 0.5rem;
+    }
+    
+    .feature-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-bottom .flex-col {
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .server-features {
+        justify-content: center;
+    }
+    
+    .ip-address {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
