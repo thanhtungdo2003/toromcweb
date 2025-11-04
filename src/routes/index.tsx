@@ -87,7 +87,7 @@ const AuthRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 export default function AppRoutes() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/toromc">
             <Routes>
                 <Route
                     path="/auth"

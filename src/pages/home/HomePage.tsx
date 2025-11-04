@@ -107,31 +107,29 @@ const HomePage = () => {
                                 <div className="hero-text">
                                     <h1 className="hero-title">{item.title}</h1>
                                     <p className="hero-description">{item.description}</p>
-                                    <Button 
-                                        type="primary" 
+                                    <Button
+                                        type="primary"
                                         size="large"
                                         className="hero-button"
-                                        icon={item.type === "discord" ? <DiscordFilled /> : 
-                                              item.type === "server" ? <PlayCircleFilled /> : 
-                                              <FireFilled />}
-                                        onClick={item.type === "discord" ? handleJoinDiscord : 
-                                                item.type === "server" ? handlePlayNow : 
+                                        icon={item.type === "discord" ? <DiscordFilled /> :
+                                            item.type === "server" ? <PlayCircleFilled /> :
+                                                <FireFilled />}
+                                        onClick={item.type === "discord" ? handleJoinDiscord :
+                                            item.type === "server" ? handlePlayNow :
                                                 () => navigate('/events')}
                                     >
                                         {item.buttonText}
                                     </Button>
                                 </div>
-                                {item.type === "discord" && (
-                                    <div className="discord-widget">
-                                        <iframe
-                                            src="https://e.widgetbot.io/channels/1432600202522656831/1433228151202381916?api=12ff209e-1903-410c-8879-8fbd458b21fe"
-                                            width="550"
-                                            height="500"
-                                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                                            className="discord-iframe"
-                                        ></iframe>
-                                    </div>
-                                )}
+                                <div className="discord-widget">
+                                    <iframe
+                                        src="https://e.widgetbot.io/channels/1432600202522656831/1433228151202381916?api=12ff209e-1903-410c-8879-8fbd458b21fe"
+                                        width="550"
+                                        height="500"
+                                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                                        className="discord-iframe"
+                                    ></iframe>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -155,7 +153,7 @@ const HomePage = () => {
                             <div className="server-info-item">
                                 <div className="info-label">Địa chỉ IP</div>
                                 <div className="info-value copyable" onClick={handlePlayNow}>
-                                    {serverInfo.ip} <span className="copy-hint"><CopyFilled/></span>
+                                    {serverInfo.ip} <span className="copy-hint"><CopyFilled /></span>
                                 </div>
                             </div>
                         </Col>
@@ -221,21 +219,21 @@ const HomePage = () => {
                     <Row gutter={[24, 24]}>
                         <Col xs={24} md={8}>
                             <Card className="game-mode-card survival-mode">
-                                <div className="game-mode-icon"><HeartOutlined/></div>
+                                <div className="game-mode-icon"><HeartOutlined /></div>
                                 <h3>Survival</h3>
                                 <p>Khám phá, xây dựng và sinh tồn trong thế giới mở rộng với economy phong phú</p>
                             </Card>
                         </Col>
                         <Col xs={24} md={8}>
                             <Card className="game-mode-card creative-mode">
-                                <div className="game-mode-icon"><BuildOutlined/></div>
+                                <div className="game-mode-icon"><BuildOutlined /></div>
                                 <h3>Creative</h3>
                                 <p>Thỏa sức sáng tạo với unlimited resources và world edit trong creative world</p>
                             </Card>
                         </Col>
                         <Col xs={24} md={8}>
                             <Card className="game-mode-card minigames-mode">
-                                <div className="game-mode-icon"><StarOutlined/></div>
+                                <div className="game-mode-icon"><StarOutlined /></div>
                                 <h3>Minigames</h3>
                                 <p>Bed Wars, Sky Wars, Spleef và nhiều minigames hấp dẫn khác</p>
                             </Card>
@@ -251,8 +249,8 @@ const HomePage = () => {
                             Tham gia ngay để trải nghiệm server Minecraft Việt Nam chất lượng nhất!
                         </p>
                         <div className="cta-buttons">
-                            <Button 
-                                type="primary" 
+                            <Button
+                                type="primary"
                                 size="large"
                                 icon={<PlayCircleFilled />}
                                 onClick={handlePlayNow}
@@ -260,7 +258,7 @@ const HomePage = () => {
                             >
                                 Chơi ngay
                             </Button>
-                            <Button 
+                            <Button
                                 size="large"
                                 icon={<DiscordFilled />}
                                 onClick={handleJoinDiscord}
